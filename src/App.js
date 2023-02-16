@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navigation from './routes/navigations/navigation';
 import Home from './routes/home/home';
-
+import SignIn from './routes/signIn/signIn'
 function App() {
   const Shop =()=>{
     return(

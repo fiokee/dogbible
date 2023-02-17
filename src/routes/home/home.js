@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 const home = () => {
   return (
     <div>
-      <h1>Hello Home</h1>
+      <p className="text-3xl font-bold underline" >Hello Home</p>
     </div>
   )
 }

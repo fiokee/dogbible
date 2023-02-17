@@ -2,7 +2,7 @@ import React from 'react'
 import { Fragment } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
-const navigation = () => {
+const Navigation = () => {
   return (
     <Fragment>
       <div className="navigation">
@@ -16,14 +16,14 @@ const navigation = () => {
           <Link lassName="nav-link" to='signIn'>
             SIGN-IN
           </Link>
-          <Link lassName="nav-link" to='signIn'>
+          <Link lassName="nav-link" to='signUpForm'>
             REGISTER 
           </Link>
         </div>
       </div>
-      <Outlet/>
+     
     </Fragment>
   )
 }
 
-export default navigation
+export default Navigation

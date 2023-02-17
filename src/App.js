@@ -1,8 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navigation from './routes/navigations/navigation';
+import Navigation from './routes/navigations/Navigation';
 import Home from './routes/home/home';
-import SignIn from './routes/signIn/signIn'
+import SignIn from './components/signUp-form/SignIn';
+import SignInUp from "./components/signUp-form/signUpForm";
+
+
 function App() {
   const Shop =()=>{
     return(
@@ -11,13 +14,16 @@ function App() {
   }
 
   return (
-         
+         <Fragment>
+          <Navigation/>
         <Routes>
-          <Route path='/' element={<Navigation/>}>
+          <Route path='/' element={<Navigation/>}/>
             <Route index element={<Home/>}/>
             <Route path='shop' element={<Shop/>}/>
-          </Route>
+            <Route path='signin' element={<SignIn/>}/>
+            <Route path='signupform' element={<SignInUp/>}/>
         </Routes>
+        </Fragment>
        
     
   );

@@ -124,6 +124,12 @@ var breeds = [
               "photo": "https://rb.gy/rp0wfm",
               "Price": 200,
             },
+            {
+              "id": 18,
+              "name": "American Bulldog",
+              "photo": "https://rb.gy/20ugn1",
+              "Price": 200,
+            },
         ],
     }
 

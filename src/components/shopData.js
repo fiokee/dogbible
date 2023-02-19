@@ -131,6 +131,37 @@ var breeds = [
               "Price": 200,
             },
         ],
+    },
+    {
+      title: 'Anatolian Shepherd',
+      items: [
+            {
+            "id": 19,
+            "name": "Anatolian Shepherd Dog",
+            "photo": "https://rb.gy/8xysnp",
+            "Price": 200,
+          },
+          
+        {
+        "id": 20,
+        "name": "Appenzeller Sennenhund",
+        "photo": "https://rb.gy/ugrasa",
+        "Price": 200,
+      },
+
+        {
+        "id": 21,
+        "name": "Australian Cattle Dog",
+        "photo": "https://rb.gy/8mg0vj",
+        "Price": 200,
+      },
+      {
+        "id": 22,
+        "name": "Australian Kelpie",
+        "photo": "https://rb.gy/vqk5zi",
+        "Price": 200,
+      },
+      ]
     }
 
 ]

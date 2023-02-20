@@ -9,10 +9,10 @@ const LandingPage = () => {
       <p className='text-center text-[white] text-2xl my-4'>Woop Woop! <span>Find your favorite</span></p>
       <div className='flex container mx-auto px-4 justify-evenly'>
         <img className='w-40' src={HeroImg}></img>
-      <div className=''>
-        <form className="m-4 flex">
-        <input className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="your@mail.com"/>
-        <button className="px-8 rounded-r-lg bg-orange-400 text-gray-800 font-bold p-4 uppercase border-yellow-500 border-t border-b border-r">Search</button>
+      <div className='mt-12'>
+        <form className="m-4 flex shadow-2xl">
+        <input className="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="search for dog"/>
+        <button className="px-8 rounded-r-lg bg-[orangered] text-white font-bold p-4 uppercase border-yellow-500 border-t border-b border-r">Search</button>
         </form>
       </div>
         <img className='w-48 j' src={HeroImg2}></img>

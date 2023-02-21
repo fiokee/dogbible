@@ -4,7 +4,7 @@ const OurBreed = () => {
   return (
 <div>
       <p className="text-3xl font-bold text-center" >Our Popular Breeds</p>
-    <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full m-6 p-6">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full m-6 p-6">
         <div class="relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
         <img class="object-cover w-full h-48 brightness-50" src="https://rb.gy/fah1lz" alt="Flower and sky"/>
 
@@ -52,6 +52,20 @@ const OurBreed = () => {
         </div>
         <h3>Marie Hademan Pahrum, Nv89049</h3>
         </div>
+    </div>
+    <div className='container m-auto'>
+      <div>
+      <span>Icon</span>
+      <p>Current news and guids to dog.</p>
+      <img></img>
+      <p>Find out more</p>
+      </div>
+      <div>
+      <span>Icon</span>
+      <p>Current news and guids to dog.</p>
+      <img></img>
+      <p>Find out more</p>
+      </div>
     </div>
 </div>
   )

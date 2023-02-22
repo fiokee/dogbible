@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navigation from './routes/navigations/Navigation';
+import Navigation from './routes/navigations/navigation';
 import Home from './routes/home';
 import SignIn from './components/signUp-form/SignIn';
 import SignInUp from "./components/signUp-form/signUpForm";

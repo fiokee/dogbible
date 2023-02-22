@@ -12,8 +12,7 @@ const index = () => {
       <LandingPage/>
       <OurBreed/>
       <ProductDog/>
-      <Footer/>
-    </Fragment>
+      </Fragment>
   )
 }
 

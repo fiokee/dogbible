@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Footer from '../../../footer/Footer'
 
 const ProductDog = () => {
   return (
@@ -21,19 +22,20 @@ const ProductDog = () => {
 
         </div>
         <div className="relative overflow-hidden shadow-lg cursor-pointer">
-        <img className="object-cover w-full h-full" src="https://rb.gy/dw6w8q" alt="Flower and sky"/>
+        <img className="object-cover w-full h-full brightness-50" src="https://rb.gy/dw6w8q" alt="Flower and sky"/>
         <div className="absolute top-0 left-0 px-6 py-4">
         <h4 className="mb-3 text-xl font-semibold tracking-tight text-white">Travel Bowls</h4>
         </div>
         </div>
 
         <div className="relative overflow-hidden shadow-lg cursor-pointer">
-        <img className="object-cover w-full h-full" src="https://rb.gy/ag7ag9" alt="Flower and sky"/>
+        <img className="object-cover w-full h-full brightness-50" src="https://rb.gy/ag7ag9" alt="Flowersky"/>
         <div className="absolute top-0 left-0 px-6 py-4">
         <h4 className="mb-3 text-xl font-semibold tracking-tight text-white">Bandanas</h4>
         </div>
         </div>
     </div>
+    <Footer/>
       </div>
       </Fragment>
   )

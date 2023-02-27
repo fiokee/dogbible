@@ -4,12 +4,17 @@ import Navigation from './routes/navigations/navigation';
 import Home from './routes/home';
 import SignIn from './components/signUp-form/SignIn';
 import SignInUp from "./components/signUp-form/signUpForm";
+import ProductCard from "./components/product-card/ProductCard";
 
 
 function App() {
   const Shop =()=>{
     return(
-      <h1>I'm the shop page</h1>
+      <Fragment>
+
+        <h1>I'm the shop page</h1>
+        <ProductCard/>
+      </Fragment>
     )
   }
 
@@ -23,8 +28,7 @@ function App() {
             <Route path='signin' element={<SignIn/>}/>
             <Route path='signupform' element={<SignInUp/>}/>
         </Routes>
-        </Fragment>
-       
+        </Fragment>    
     
   );
 }

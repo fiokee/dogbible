@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import SignIn from '../../routes/sign-in/SignIn';
 const SignUpForm = () => {
   const defaultForm = {
     displayName: '',
@@ -24,8 +24,9 @@ const SignUpForm = () => {
 
   return (
     <div className='ontainer max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
-      <div className='bg-white px-6 py-8 rounded shadow-md text-black w-full'>
+      <div className='bg-[lightgray] px-6 py-8 rounded shadow-md text-black w-full'>
       <h2 className='mb-8 text-3xl text-center'>Register</h2>
+      <SignIn/>
       <form onSubmit={handleSubmit}>
         <label>displayName</label>
         <input

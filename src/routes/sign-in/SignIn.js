@@ -1,11 +1,12 @@
 import React from 'react'
-import { signWithGoogle } from '../../ultis/firebase/firebase.util'
+import { signWithGoogle, getUserFromAuth } from '../../ultis/firebase/firebase.util'
 
 const SignIn = () => {
  const logUser = async ()=>{
-  const response = await signWithGoogle()
+  const { user } = await signWithGoogle()
+  getUserFromAuth(user)
   
-  console.log(response)
+  // console.log(user)
  }
   
   return (
@@ -14,5 +15,6 @@ const SignIn = () => {
     </div>
   )
 }
+
 
 export default SignIn

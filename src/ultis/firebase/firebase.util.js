@@ -1,3 +1,4 @@
+// import { async } from '@firebase/util';
 import {initializeApp} from 'firebase/app';
 import {
   getAuth, 
@@ -5,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithRedirect
 } from 'firebase/auth'
+import {doc, setDoc, getDoc, getFirestore} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -29,3 +31,14 @@ const firebaseConfig = {
   export const auth = getAuth();
   
   export const signWithGoogle = ()=> signInWithPopup(auth, provider);
+
+  // getting a user record into the firestore database
+  const db = getFirestore();
+
+  export const getUserFromAuth = async (userAuth)=>{
+    const UserDocRef = doc(db, 'users', userAuth.uid)
+    // console.log(UserDocRef)
+    //checking if the user exist
+    const userSnapShoot = await getDoc(UserDocRef);
+    console.log(userSnapShoot)
+  }

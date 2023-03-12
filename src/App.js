@@ -5,6 +5,7 @@ import Home from './routes/home';
 import SignIn from './routes/sign-in/SignIn'
 import SignInUp from "./components/signUp-form/signUpForm";
 import ProductCard from "./components/product-card/ProductCard";
+import Footer from "./routes/footer/Footer";
 
 
 function App() {

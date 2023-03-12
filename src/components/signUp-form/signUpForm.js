@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import SignIn from '../../routes/sign-in/SignIn';
+import {createUserAuthFromEmailAndPassword} from '../../ultis/firebase/firebase.util';
 
 const SignUpForm = () => {
   
@@ -13,14 +15,29 @@ const SignUpForm = () => {
 
   const [formFields, setFormFields] = useState(defaultForm);
   const { displayName, name, email, password, confirmPassword } = formFields;
-console.log(formFields)
+
+  console.log(formFields)
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
+
+    if(password !== confirmPassword){
+      alert("password do not match");
+      return;
+
+    }
+    try {
+      const response = await createUserAuthFromEmailAndPassword(email, password);
+      console.log(response);
+    } catch (error) {
+      console.log("user creation enter an error", error.message);
+    }
+    
     // handle form submission logic
   };
 
@@ -74,7 +91,8 @@ console.log(formFields)
         name='confirmPassword' 
         value={confirmPassword} 
         onChange={handleInputChange} />
-        <button 
+
+        <button
         className='w-full text-center py-3 rounded bg-[orangered] text-white hover:bg-green-dark focus:outline-none my-1'
         type='submit'>Sign Up</button>
       </form>

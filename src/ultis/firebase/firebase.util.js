@@ -42,7 +42,7 @@ const firebaseConfig = {
     const userSnapShoot = await getDoc(UserDocRef);
     console.log(userSnapShoot)
 
-     //checking if the user data exist
+     //checking if the user data exist and if not we create it
      if(!userSnapShoot.exists()){
       const {displayName, email} = userAuth;
       const createdAt = new Date()

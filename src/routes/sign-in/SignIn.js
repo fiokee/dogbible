@@ -6,7 +6,7 @@ const SignIn = () => {
   const { user } = await signWithGoogle()
 
   // getting user from auth google provider to database //
-  getUserFromAuth(user)
+  const UserDocRef= getUserFromAuth(user)
   
   // console.log(user)
  }

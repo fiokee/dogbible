@@ -29,6 +29,7 @@ function App() {
             <Route path='SignIn' element={<SignIn/>}/>
             <Route path='signupform' element={<SignInUp/>}/>
         </Routes>
+        <Footer/>
         </Fragment>    
     
   );

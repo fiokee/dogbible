@@ -35,7 +35,7 @@ const ProductDog = () => {
         </div>
         </div>
     </div>
-    <Footer/>
+    {/* <Footer/> */}
       </div>
       </Fragment>
   )

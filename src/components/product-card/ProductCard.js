@@ -1,6 +1,7 @@
 import React from 'react'
 import './product-card.styles.scss';
-import DogPic from '../../assets/dog1.png'
+import DogPic from '../../assets/dog1.png';
+
 const ProductCard = () => {
   return (
     <div className='product-card-container'>

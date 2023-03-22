@@ -3,10 +3,10 @@ import { signWithGoogle, getUserFromAuth } from '../../ultis/firebase/firebase.u
 
 const SignIn = () => {
  const logUser = async ()=>{
-  const { user } = await signWithGoogle()
+  const { user } = await signWithGoogle();
 
   // getting user from auth google provider to database //
-  const UserDocRef= getUserFromAuth(user)
+   const userDocRef = await getUserFromAuth(user);
   
   // console.log(user)
  }

@@ -18,6 +18,11 @@ const SignUpForm = () => {
   const { displayName, name, email, password, confirmPassword } = formFields;
 
   // console.log(formFields)
+
+  //resetting the form fields
+  const resetFormFileds = ()=>{
+    setFormFields(defaultForm)
+  }
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,10 +39,17 @@ const SignUpForm = () => {
       //authenticate user with email and password
       const {user} = await createUserWithEmailAndPassword(auth,email, password);
       await getUserFromAuth(user, { displayName});
+      //calling reset formfields
+      resetFormFileds();
       console.log(user)
 
     } catch (error) {
-      console.log('user creation encounter an error', error);
+      //let the user know if the email already exist
+      if(error.code === 'auth/email-already-in-use'){
+        alert("cannot create user, email already in used");
+      }else{
+        console.log('user creation encounter an error', error);
+      }
     }
     
     // handle form submission logic

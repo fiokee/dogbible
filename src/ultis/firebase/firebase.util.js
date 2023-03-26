@@ -1,7 +1,7 @@
 // import { async } from '@firebase/util';
 import {initializeApp} from 'firebase/app';
 import {
-  getAuth, 
+  getAuth,
   signInWithPopup, 
   GoogleAuthProvider,
   createUserWithEmailAndPassword
@@ -64,7 +64,7 @@ const firebaseConfig = {
   }
 
   //creating a user with email and password auth 
-export const createAuthUserWithEmailAndPassword = async(email, password)=>{
-  if(!email || !password) return;
-  createUserWithEmailAndPassword(auth, email, password);
-}
+// export const createAuthUserWithEmailAndPassword = async(email, password)=>{
+//   if(!email || !password) return;
+//   createUserWithEmailAndPassword(auth, email, password);
+// }

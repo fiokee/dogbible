@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import SignIn from '../../routes/sign-in/SignIn';
-import {createAuthUserWithEmailAndPassword, getUserFromAuth} from '../../ultis/firebase/firebase.util';
+import {getUserFromAuth, auth} from '../../ultis/firebase/firebase.util';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 const SignUpForm = () => {
   
@@ -16,7 +17,7 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultForm);
   const { displayName, name, email, password, confirmPassword } = formFields;
 
-  console.log(formFields)
+  // console.log(formFields)
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -25,14 +26,15 @@ const SignUpForm = () => {
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-
     if(password !== confirmPassword){
       alert("password do not match");
       return;
     }
     try {
-      const {user} = await createAuthUserWithEmailAndPassword(email, password);
+      //authenticate user with email and password
+      const {user} = await createUserWithEmailAndPassword(auth,email, password);
       await getUserFromAuth(user, { displayName});
+      console.log(user)
 
     } catch (error) {
       console.log('user creation encounter an error', error);

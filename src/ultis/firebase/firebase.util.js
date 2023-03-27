@@ -30,7 +30,7 @@ const firebaseConfig = {
 
   export const auth = getAuth();
   
-  export const signWithGoogle = ()=> signInWithPopup(auth, provider);
+  export const signWithGooglePop = ()=> signInWithPopup(auth, provider);
 
   // getting a user record into the firestore database
   const db = getFirestore();

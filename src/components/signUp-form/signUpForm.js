@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import SignIn from '../../routes/sign-in/SignIn';
-import {getUserFromAuth, auth} from '../../ultis/firebase/firebase.util';
+import {getUserFromAuth, auth, signWithGooglePop} from '../../ultis/firebase/firebase.util';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 const SignUpForm = () => {
@@ -28,6 +28,14 @@ const SignUpForm = () => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
+  const logUser = async ()=>{
+    const { user } = await signWithGooglePop();
+  
+    // getting user from auth google provider to database //
+     const userDocRef = await getUserFromAuth(user);
+    
+    // console.log(user)
+   }
 
   const handleSubmit = async(event) => {
     event.preventDefault();
@@ -56,10 +64,10 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2'>
+    <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2  mb-16'>
       <div className='bg-[lightgray] px-6 py-8 rounded shadow-md text-black w-full'>
       <h2 className='mb-8 text-3xl text-center'>Register</h2>
-      <SignIn/>
+      {/* <SignIn/> */}
       <form onSubmit={handleSubmit}>
         <label>displayName</label>
         <input
@@ -108,7 +116,13 @@ const SignUpForm = () => {
 
         <button
         className='w-full text-center py-3 rounded bg-[orangered] text-white hover:bg-green-dark focus:outline-none my-1'
-        type='submit'>Sign Up</button>
+        type='submit'>Sign Up
+        </button>
+      <p className=' text-center m-5'>OR</p>
+      <p className=' cursor-pointer m-7 text-center text-[orangered] hover:underline font-semibold'>Already have an Account?</p>
+      <div className=' m-auto justify-center text-center'>
+      <button onClick={logUser} className='border- bg-slate-900 text-white justify-center'>Sign-up with Google</button>
+      </div>
       </form>
 
       </div>

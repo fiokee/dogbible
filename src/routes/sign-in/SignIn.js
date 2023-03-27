@@ -1,20 +1,81 @@
-import React from 'react'
-import { signWithGoogle, getUserFromAuth } from '../../ultis/firebase/firebase.util'
+import React, {useState} from 'react'
+import { signWithGooglePop, getUserFromAuth} from '../../ultis/firebase/firebase.util';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const SignIn = () => {
- const logUser = async ()=>{
-  const { user } = await signWithGoogle();
+  const defaultForm = {
+    email: '',
+    password: ''
+  };
 
-  // getting user from auth google provider to database //
-   const userDocRef = await getUserFromAuth(user);
+  const [formFields, setFormFields] = useState(defaultForm);
+  const {email, password } = formFields;
+
+  // console.log(formFields)
+
+  //resetting the form fields
+  const resetFormFileds = ()=>{
+    setFormFields(defaultForm)
+  }
+//signin with google
+  const sigInWithGoogle = async ()=>{
+    const { user } = await signWithGooglePop();
   
-  // console.log(user)
- }
+    // getting user from auth google provider to database //
+      await getUserFromAuth(user);
+    
+    // console.log(user)
+   }
+  
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
+
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    try {
+      resetFormFileds();
+    } catch (error) {
+      
+    }
+  }
+
+
   
   return (
-    <div>
-      <h1>Sign In Page</h1>
-      <button onClick={logUser} className='border- bg-slate-900 text-white'>Sign-in with Google</button>
+    <div className='container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 mb-16'>
+      <div className='bg-[lightgray] px-6 py-8 rounded shadow-md text-black w-full'>
+        <form onSubmit={handleSubmit}>
+      <label>email</label>
+        <input 
+        className='block border border-grey-light w-full p-3 rounded mb-4' 
+        required
+        type='email' 
+        name='email' 
+        value={email} 
+        onChange={handleInputChange} />
+
+        <label>password</label>
+        <input 
+        className='block border border-grey-light w-full p-3 rounded mb-4' 
+        required
+        type='password' 
+        name='password' 
+        value={password} 
+        onChange={handleInputChange} />
+
+        
+        <button
+        className='w-full text-center py-3 rounded bg-[orangered] text-white hover:bg-green-dark focus:outline-none my-1'
+        type='submit'>Sign-In</button>
+      <p className=' text-center m-5'>OR</p>
+      <p className=' cursor-pointer m-7 text-center text-[orangered] hover:underline font-semibold'>Need an Account?</p>
+      <div className=' m-auto justify-center text-center'>
+      <button onClick={sigInWithGoogle} className='border- bg-slate-900 text-white justify-center'>Sign-in with Google</button>
+      </div>
+      </form>
+      </div>
     </div>
   )
 }

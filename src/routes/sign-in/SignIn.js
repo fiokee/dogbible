@@ -36,10 +36,19 @@ const SignIn = () => {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response)
       resetFormFileds();
-    } catch (error) {
-      
+    } catch (error){
+      switch(error.code){
+        case 'auth/wrong-password':
+          alert('incorrect password for the email');
+          break;
+          case 'auth/user-not-found':
+            alert('there is no user associated with this email');
+            break;
+            default:
+            console.log(error);
+      } 
     }
-  }
+  };
 
 
   
@@ -66,13 +75,13 @@ const SignIn = () => {
         onChange={handleInputChange} />
 
         
-        <button
+      <button
         className='w-full text-center py-3 rounded bg-[orangered] text-white hover:bg-green-dark focus:outline-none my-1'
         type='submit'>Sign-In</button>
       <p className=' text-center m-5'>OR</p>
       <p className=' cursor-pointer m-7 text-center text-[orangered] hover:underline font-semibold'>Need an Account?</p>
       <div className=' m-auto justify-center text-center'>
-      <button onClick={sigInWithGoogle} className='border- bg-slate-900 text-white justify-center'>Sign-in with Google</button>
+      <button type='button' onClick={sigInWithGoogle} className='border- bg-slate-900 text-white justify-center'>Sign-in with Google</button>
       </div>
       </form>
       </div>

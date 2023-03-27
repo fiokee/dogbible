@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { signWithGooglePop, getUserFromAuth} from '../../ultis/firebase/firebase.util';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signWithGooglePop, getUserFromAuth, auth} from '../../ultis/firebase/firebase.util';
+import { signInWithEmailAndPassword} from 'firebase/auth';
 
 const SignIn = () => {
   const defaultForm = {
@@ -20,10 +20,8 @@ const SignIn = () => {
 //signin with google
   const sigInWithGoogle = async ()=>{
     const { user } = await signWithGooglePop();
-  
     // getting user from auth google provider to database //
       await getUserFromAuth(user);
-    
     // console.log(user)
    }
   
@@ -35,6 +33,8 @@ const SignIn = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      console.log(response)
       resetFormFileds();
     } catch (error) {
       

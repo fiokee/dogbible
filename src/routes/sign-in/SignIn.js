@@ -33,6 +33,7 @@ const SignIn = () => {
   const handleSubmit = async(e)=>{
     e.preventDefault();
     try {
+      //signin with email and password
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response)
       resetFormFileds();

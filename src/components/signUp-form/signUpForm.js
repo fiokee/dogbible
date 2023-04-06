@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
 import SignIn from '../../routes/sign-in/SignIn';
 import {getUserFromAuth, auth, signWithGooglePop} from '../../ultis/firebase/firebase.util';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
+import { UserContext } from '../contexts/userContext';
 
 const SignUpForm = () => {
   
@@ -17,7 +18,9 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultForm);
   const { displayName, name, email, password, confirmPassword } = formFields;
 
-  // console.log(formFields)
+  const {setCurrentUser} = useContext(UserContext)
+  // console.log(setCurrentUser)
+
 
   //resetting the form fields
   const resetFormFileds = ()=>{
@@ -47,6 +50,7 @@ const SignUpForm = () => {
       //authenticate user with email and password
       const {user} = await createUserWithEmailAndPassword(auth,email, password);
       await getUserFromAuth(user, { displayName});
+      setCurrentUser(user)
       //calling reset formfields
       resetFormFileds();
       console.log(user)

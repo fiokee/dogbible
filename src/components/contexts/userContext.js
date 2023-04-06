@@ -1,7 +1,7 @@
 import {createContext, useState} from 'react';
 
 //as the value we want to access
-export const userContext = createContext({
+export const UserContext = createContext({
     currentUser: null,
     setCurrentUser: ()=> null,
 });
@@ -9,7 +9,7 @@ export const userContext = createContext({
 export const UserProvider = ({children})=>{
     const [currentUser, setCurrentUser] = useState(null);
     const value = {currentUser, setCurrentUser};
-    return<userContext.Provider value={value}>{children}</userContext.Provider>
+    return<UserContext.Provider value={value}>{children}</UserContext.Provider>
 }
 
 {/* <UserProvider>

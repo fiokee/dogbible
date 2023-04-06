@@ -1,9 +1,12 @@
 import React from 'react';
-import { Fragment } from 'react';
+import { Fragment, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { GiSittingDog } from 'react-icons/gi';
+import { userContext } from '../../components/contexts/userContext';
 
 const Navigation = () => {
+  const {currentUser}= useContext(userContext)
+  console.log(currentUser)
   return (
     <Fragment>
       <div className="flex justify-center space-x-4 bg-light-500 my-7 text-xl">

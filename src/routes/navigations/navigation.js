@@ -9,10 +9,10 @@ const Navigation = () => {
   const {currentUser, setCurrentUser}= useContext(UserContext)
   // console.log(currentUser)
 //signing a user out
-const signOuthandle = async()=>{
- await UserSignout();
- setCurrentUser(null);
-}
+// const signOuthandle = async()=>{
+//  await UserSignout();
+//  setCurrentUser(null);
+// }
 
   return (
     <Fragment>
@@ -28,7 +28,8 @@ const signOuthandle = async()=>{
           </Link>
           {
             currentUser ? (
-              <Link className="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900" onClick={signOuthandle}>SIGN OUT</Link>
+
+              <Link className="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900" onClick={UserSignout}>SIGN OUT</Link>
               ): (
               
           <Link className="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900" to='SignIn'>

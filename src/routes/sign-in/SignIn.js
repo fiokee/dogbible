@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react'
 import { signWithGooglePop, getUserFromAuth, auth} from '../../ultis/firebase/firebase.util';
 import { signInWithEmailAndPassword} from 'firebase/auth';
-import { UserContext } from '../../components/contexts/userContext';
+// import { UserContext } from '../../components/contexts/userContext';
 
 const SignIn = () => {
   const defaultForm = {
@@ -12,7 +12,7 @@ const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultForm);
   const {email, password } = formFields;
 //using the current user in our context
-  const {setCurrentUser} = useContext(UserContext)
+  // const {setCurrentUser} = useContext(UserContext)
 
   // console.log(formFields)
 
@@ -38,8 +38,8 @@ const SignIn = () => {
     try {
       //signin with email and password and getting back the user auth as a response
       const {user} = await signInWithEmailAndPassword(auth, email, password);
-      // console.log(response)
-      setCurrentUser(user);
+      console.log(user)
+      // setCurrentUser(user);
 
       resetFormFileds();
     } catch (error){

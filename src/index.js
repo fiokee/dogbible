@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 import { UserProvider } from './components/contexts/userContext';
+import {ProductsProvider} from './components/contexts/productContext'
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +13,9 @@ root.render(
     <BrowserRouter>
 
     <UserProvider>
-    <App />
+      <ProductsProvider>
+      <App />
+      </ProductsProvider>
     </UserProvider>
 
     </BrowserRouter>

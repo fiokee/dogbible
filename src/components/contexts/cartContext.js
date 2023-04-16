@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
     if it finds it increase the quantity otherwise create a new cartitem.
 */
 const addItems = (cartItems, productToAdd)=>{
-
+// if cartite
 }
 
 export const CartContext = createContext({
@@ -18,9 +18,9 @@ export const CartProvider = ({children})=>{
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
-    // A metthode that allow us to add an existing product from product card to the cartItem
+    // A methode that allows us to add an existing product from product card to the cartItem
     const addItemsToCart = (productToAdd)=>{
-
+    setCartItems(addItems(cartItems, productToAdd));
     }
 
 

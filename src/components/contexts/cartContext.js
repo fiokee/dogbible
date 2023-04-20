@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 /*An helper function that helps to find any cartitem that exist and match the id of product. 
     if it finds it increase the quantity otherwise create a new cartitem.
@@ -25,7 +25,7 @@ isCartOpen: false,
 setIsCartOpen: ()=> {},
 cartItems: [],
 addItemsToCart: ()=>{},
-setCartCount: 0
+cartCount: 0
 });
 
 export const CartProvider = ({children})=>{
@@ -33,13 +33,20 @@ export const CartProvider = ({children})=>{
     const [cartItems, setCartItems] = useState([]);
     const [cartCount, setCartCount] = useState(0);
 
+    //setting the cartCount
+
+    useEffect(()=>{
+        const newCartCount = cartItems.reduce((total, cartItem)=> total + cartItem.quantity, 0);
+        setCartCount(newCartCount)
+    },[cartItems])
+
     // A methode that allows us to add an existing product from product card to the cartItem
     const addItemsToCart = (productToAdd)=>{
     setCartItems(addItems(cartItems, productToAdd));
     }
 
 
-    const value= {isCartOpen, setIsCartOpen, addItemsToCart, cartItems, setCartCount}
+    const value= {isCartOpen, setIsCartOpen, addItemsToCart, cartItems, cartCount}
     return(
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )

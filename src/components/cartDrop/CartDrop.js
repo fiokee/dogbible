@@ -3,14 +3,14 @@ import './CartDrop.styles.scss';
 import { CartContext } from '../contexts/cartContext';
 import CartItem from '../cart-item/CartItem';
 
-const CartDrop = (cartItem) => {
+const CartDrop = () => {
   const {cartItems} = useContext(CartContext)
   return (
     <div className='cart-dropdown-container'>
       <div className='cart-items'>
-        {cartItems.map((cartItem) =>( 
+        {cartItems.map((item) =>( 
         
-        <CartItem key={cartItem.id} cartItem={cartItem}/>
+        <CartItem key={item.id} cartItem={item}/>
       ))}
       </div>
       <button>GO TO CHECKOUT</button>

@@ -2,31 +2,31 @@
     {
         "id": 1,
         "name": "Saddle Coat",
-        "photo": "https://rb.gy/fah1lz",
+        "photoUrl": "https://rb.gy/fah1lz",
         "Price": 200
       },
       {
         "id": 2,
         "name": "Black German Shepherd",
-        "photo": "https://rb.gy/50wwwx",
+        "photoUrl": "https://rb.gy/50wwwx",
         "Price": 200
       },
       {
         "id": 3,
         "name": "Panda German Shepherd",
-         "photo": "https://rb.gy/s6xdpe",
+         "photoUrl": "https://rb.gy/s6xdpe",
         "Price": 200
       },
       {
         "id": 4,
         "name": "Sable German Shepherd",
-         "photo": "https://rb.gy/mtmbkr",
+         "photoUrl": "https://rb.gy/mtmbkr",
         "Price": 200
       },
       {
         "id": 5,
         "name": "White German Shepherd",
-        "photo": "https://rb.gy/m9noqm",
+        "photoUrl": "https://rb.gy/m9noqm",
         "Price": 200
       }
 ]

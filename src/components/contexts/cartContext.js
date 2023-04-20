@@ -5,15 +5,20 @@ import { createContext, useState } from "react";
 */
 const addItems = (cartItems, productToAdd)=>{
 //find if  cartItem contains productToAdd
-const existingCartItem = cartItems.find((cartItem) =>cartItem.id === productToAdd.id)
+const existingCartItem = cartItems.find(
+    (cartItem) =>cartItem.id === productToAdd.id
+    );
 // if found increment quantity
 if(existingCartItem){
-  return cartItems.map((cartItem) => cartItem.id === productToAdd.id
-     ? {...cartItems, quantity: cartItem.quantity + 1} : cartItem)
+  return cartItems.map((cartItem) => 
+  cartItem.id === productToAdd.id
+     ? {...cartItems, quantity: cartItem.quantity + 1} 
+     : cartItem
+     );
 }
 //retrun new array with modified cartItems / new cartItem
-return [...cartItems, {...productToAdd, quantity: 1 }]
-}
+return [...cartItems, {...productToAdd, quantity: 1 }];
+};
 
 export const CartContext = createContext({
 isCartOpen: false,

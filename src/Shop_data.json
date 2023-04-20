@@ -3,13 +3,13 @@
         "id": 1,
         "name": "Saddle Coat",
         "photoUrl": "https://rb.gy/fah1lz",
-        "Price": 200
+        "Price": 100
       },
       {
         "id": 2,
         "name": "Black German Shepherd",
         "photoUrl": "https://rb.gy/50wwwx",
-        "Price": 200
+        "Price": 100
       },
       {
         "id": 3,
@@ -21,12 +21,12 @@
         "id": 4,
         "name": "Sable German Shepherd",
          "photoUrl": "https://rb.gy/mtmbkr",
-        "Price": 200
+        "Price": 150
       },
       {
         "id": 5,
         "name": "White German Shepherd",
         "photoUrl": "https://rb.gy/m9noqm",
-        "Price": 200
+        "Price": 150
       }
 ]

@@ -6,13 +6,13 @@ import { createContext, useState } from "react";
 const addItems = (cartItems, productToAdd)=>{
 //find if  cartItem contains productToAdd
 const existingCartItem = cartItems.find(
-    (cartItem) =>cartItem.id === productToAdd.id
+    (cartItem) => cartItem.id === productToAdd.id
     );
 // if found increment quantity
 if(existingCartItem){
   return cartItems.map((cartItem) => 
   cartItem.id === productToAdd.id
-     ? {...cartItems, quantity: cartItem.quantity + 1} 
+     ? { ...cartItem, quantity: cartItem.quantity + 1} 
      : cartItem
      );
 }
@@ -24,12 +24,14 @@ export const CartContext = createContext({
 isCartOpen: false,
 setIsCartOpen: ()=> {},
 cartItems: [],
-addItemsToCart: ()=>{}
+addItemsToCart: ()=>{},
+setCartCount: 0
 });
 
 export const CartProvider = ({children})=>{
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
+    const [cartCount, setCartCount] = useState(0);
 
     // A methode that allows us to add an existing product from product card to the cartItem
     const addItemsToCart = (productToAdd)=>{
@@ -37,7 +39,7 @@ export const CartProvider = ({children})=>{
     }
 
 
-    const value= {isCartOpen, setIsCartOpen, addItemsToCart, cartItems}
+    const value= {isCartOpen, setIsCartOpen, addItemsToCart, cartItems, setCartCount}
     return(
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )

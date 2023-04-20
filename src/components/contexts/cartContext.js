@@ -4,7 +4,15 @@ import { createContext, useState } from "react";
     if it finds it increase the quantity otherwise create a new cartitem.
 */
 const addItems = (cartItems, productToAdd)=>{
-// if cartite
+//find if  cartItem contains productToAdd
+const existingCartItem = cartItems.find((cartItem) =>cartItem.id === productToAdd.id)
+// if found increment quantity
+if(existingCartItem){
+  return cartItems.map((cartItem) => cartItem.id === productToAdd.id
+     ? {...cartItems, quantity: cartItem.quantity + 1} : cartItem)
+}
+//retrun new array with modified cartItems / new cartItem
+return [...cartItems, {...productToAdd, quantity: 1 }]
 }
 
 export const CartContext = createContext({
@@ -24,7 +32,7 @@ export const CartProvider = ({children})=>{
     }
 
 
-    const value= {isCartOpen, setIsCartOpen}
+    const value= {isCartOpen, setIsCartOpen, addItemsToCart, cartItems}
     return(
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )

@@ -5,6 +5,7 @@ import Home from './routes/home';
 import Shop from "./routes/shop/Shop";
 import SignIn from './routes/sign-in/SignIn'
 import SignInUp from "./components/signUp-form/signUpForm";
+import CheckOut from './routes/checkout/CheckOut'
 import Footer from "./routes/footer/Footer";
 
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='shop' element={<Shop/>}/>
             <Route path='SignIn' element={<SignIn/>}/>
             <Route path='signupform' element={<SignInUp/>}/>
+            <Route path="checkout" element={<CheckOut/>}/>
         </Routes>
         <Footer/>
         </Fragment>    

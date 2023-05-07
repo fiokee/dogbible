@@ -42,7 +42,7 @@ const CheckOut = () => {
             // )
         ))
       }
-      <span className='Total'>Total: 0</span>
+      <span className='total'>Total: 0</span>
     </div>
   )
 }

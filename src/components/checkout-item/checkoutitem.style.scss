@@ -27,10 +27,17 @@
   
       .arrow {
         cursor: pointer;
+        font-size: 19px;
+        background-color: #EE7D15;
+        width: 43px;
+        text-align: center;
+        border-radius: 18px;
+        color: white;
       }
   
       .value {
-        margin: 0 10px;
+        margin: 0 20px;
+        font-size: 23px;
       }
     }
   

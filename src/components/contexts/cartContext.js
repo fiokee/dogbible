@@ -53,20 +53,31 @@ cartItems: [],
 addItemsToCart: ()=>{},
 removeItemFromCart: ()=>{},
 clearItemFromCart: ()=>{},
-cartCount: 0
+cartCount: 0,
+cartTotal: 0
 });
 
 export const CartProvider = ({children})=>{
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [cartCount, setCartCount] = useState(0);
+    const [cartTotal, setCartTotal] = useState(0);
 
     //setting the cartCount
 
     useEffect(()=>{
         const newCartCount = cartItems.reduce((total, cartItem)=> total + cartItem.quantity, 0)
         setCartCount(newCartCount)
-    },[cartItems])
+    },[cartItems]);
+
+    // adding the caritem total
+    useEffect(()=>{
+        const newCartTotal = cartItems.reduce((total, cartItem)=> total + cartItem.quantity * cartItem.Price,
+         0);
+
+        setCartTotal(newCartTotal)
+    }, [cartItems])
+
 
     // A methode that allows us to add an existing product from product card to the cartItem
     const addItemsToCart = (productToAdd)=>{
@@ -83,7 +94,7 @@ export const CartProvider = ({children})=>{
         }
 
 
-    const value= {isCartOpen, setIsCartOpen, addItemsToCart, removeItemFromCart, clearItemFromCart, cartItems, cartCount}
+    const value= {isCartOpen, setIsCartOpen, addItemsToCart, removeItemFromCart, clearItemFromCart, cartItems, cartCount, cartTotal}
     return(
         <CartContext.Provider value={value}>{children}</CartContext.Provider>
     )

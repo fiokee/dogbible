@@ -68,8 +68,8 @@ const firebaseConfig = {
 
   // adding items or collections to the firstore database
 
-  export const addProductCollections = async (collectionKey, )=>{
-    
+  export const addCollectionAndDocument = async (collectionKey, objectToAdd)=>{
+    const collectionRef = collection(db, collectionKey);
   }
 
   //creating a user with email and password auth 

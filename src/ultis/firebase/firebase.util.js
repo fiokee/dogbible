@@ -9,7 +9,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth'
-import {doc, setDoc, getDoc, getFirestore} from 'firebase/firestore';
+import {doc, setDoc, getDoc, getFirestore, collection, writeBatch} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -64,6 +64,12 @@ const firebaseConfig = {
       }
      }
      return UserDocRef;
+  }
+
+  // adding items or collections to the firstore database
+
+  export const addProductCollections = async (collectionKey, )=>{
+    
   }
 
   //creating a user with email and password auth 

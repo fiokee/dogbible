@@ -1,4 +1,4 @@
-var breeds = [
+const  BREEDS_DATA = [
 
     {
      title: 'German Shepherd',
@@ -165,5 +165,5 @@ var breeds = [
     }
 
 ]
-
+export default BREEDS_DATA
     

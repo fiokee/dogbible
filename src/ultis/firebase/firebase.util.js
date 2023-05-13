@@ -1,5 +1,6 @@
 // import { async } from '@firebase/util';
 import {initializeApp} from 'firebase/app';
+
 import {
   getAuth,
   signInWithPopup, 
@@ -70,7 +71,17 @@ const firebaseConfig = {
 
   export const addCollectionAndDocument = async (collectionKey, objectToAdd)=>{
     const collectionRef = collection(db, collectionKey);
-  }
+    const batch = writeBatch(db);
+
+    objectToAdd.forEach((object)=>{
+      const docRef = doc(collectionRef, object.title.toLowerCase());
+
+      batch.set(docRef, object);
+    });
+    await batch.commit();
+    console.log("success");
+  };
+
 
   //creating a user with email and password auth 
 // export const createAuthUserWithEmailAndPassword = async(email, password)=>{

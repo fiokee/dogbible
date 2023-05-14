@@ -10,7 +10,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth'
-import {doc, setDoc, getDoc, getFirestore, collection, writeBatch} from 'firebase/firestore';
+import {doc, setDoc, getDoc, getFirestore, collection, writeBatch, query, getDocs} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -67,7 +67,7 @@ const firebaseConfig = {
      return UserDocRef;
   }
 
-  // adding items or collections to the firstore database
+  // adding items or collections to the firstore database or getting products to firestore database
 
   export const addCollectionAndDocument = async (collectionKey, objectToAdd)=>{
     const collectionRef = collection(db, collectionKey);
@@ -82,6 +82,19 @@ const firebaseConfig = {
     console.log("success");
   };
 
+  //get items or product form firestore database
+
+ export const getCollectionDocument = async ()=>{
+  const collectionRef = collection(db, 'categories');
+
+  const q = query (collectionRef);
+  const querySnapshoot = await getDocs(q);
+  const categoryMap = querySnapshoot. docs. reduce((acc, docSnapshot)=>{
+    const {title, items} = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+ }
 
   //creating a user with email and password auth 
 // export const createAuthUserWithEmailAndPassword = async(email, password)=>{

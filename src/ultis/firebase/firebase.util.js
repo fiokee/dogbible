@@ -94,6 +94,8 @@ const firebaseConfig = {
     acc[title.toLowerCase()] = items;
     return acc;
   }, {});
+
+  return categoryMap;
  }
 
   //creating a user with email and password auth 

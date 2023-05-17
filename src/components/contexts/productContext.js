@@ -4,7 +4,7 @@ import {addCollectionAndDocument, getCollectionDocument} from '../../ultis/fireb
 
 export const ProductsContext = createContext({
     products: [],
-    // setProducts: ()=> []
+   
 })
 
 

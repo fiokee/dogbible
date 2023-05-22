@@ -2,15 +2,15 @@ import React, {createContext, useState, useEffect} from 'react'
 import BREEDS_DATA from '../shopData';
 import {addCollectionAndDocument, getCollectionDocument} from '../../ultis/firebase/firebase.util';
 
-export const ProductsContext = createContext({
-    products: [],
+export const CategoriesContext = createContext({
+    categoriesMap: {},
    
 })
 
 
 
-export const ProductsProvider = ({children})=>{
-    const [products, setProducts] = useState([]);
+export const CategoriesProvider = ({children})=>{
+    const [categoriesMap, setCategorieMap] = useState({});
     // useEffect(()=>{
     //     addCollectionAndDocument('categories', BREEDS_DATA);
     // },[])
@@ -19,11 +19,13 @@ export const ProductsProvider = ({children})=>{
         const getCategory = async()=>{
         const getCategoryMap = await getCollectionDocument();
         console.log(getCategoryMap)
+
+        setCategorieMap(getCategoryMap);
         };
         getCategory()
     }, [])
    
-    const value= {products};
+    const value= {categoriesMap};
 
-    return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
+    return <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
 }

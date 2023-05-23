@@ -5,13 +5,13 @@ import { CartContext } from '../contexts/cartContext';
 
 const ProductCard = ({product}) => {
   const {addItemsToCart} = useContext(CartContext)
-  const {name, photoUrl, Price} = product
+  const {name, photo, Price} = product
   
   const addProducttoCart = ()=> addItemsToCart(product)
   
   return (
     <div className='product-card-container'>
-      <img src={photoUrl} alt={`${name}`}/>
+      <img src={photo} alt={`${name}`}/>
       <div className='footer'>
         <span className='name'>{name}</span>
         <span className='price'>${Price}</span>

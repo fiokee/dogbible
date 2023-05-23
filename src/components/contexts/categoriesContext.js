@@ -10,7 +10,7 @@ export const CategoriesContext = createContext({
 
 
 export const CategoriesProvider = ({children})=>{
-    const [categoriesMap, setCategorieMap] = useState({});
+    const [categoriesMap, setCategoriesMap] = useState({});
     // useEffect(()=>{
     //     addCollectionAndDocument('categories', BREEDS_DATA);
     // },[])
@@ -20,7 +20,7 @@ export const CategoriesProvider = ({children})=>{
         const getCategoryMap = await getCollectionDocument();
         console.log(getCategoryMap)
 
-        setCategorieMap(getCategoryMap);
+        setCategoriesMap(getCategoryMap);
         };
         getCategory()
     }, [])

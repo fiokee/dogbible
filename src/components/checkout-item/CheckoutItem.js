@@ -8,7 +8,7 @@ import { GoTrashcan } from 'react-icons/go';
 
 const CheckoutItem = ({cartitem}) => {
 
-  const {name, photoUrl, quantity, Price} =cartitem;
+  const {name, photo, quantity, Price} =cartitem;
 
   const {clearItemFromCart , addItemsToCart, removeItemFromCart} = useContext(CartContext);
 
@@ -19,7 +19,7 @@ const CheckoutItem = ({cartitem}) => {
   return (
     <div className='checkout-item-container'>
         <div className='image-container'>
-            <img src={photoUrl} alt={`${name}`}/>
+            <img src={photo} alt={`${name}`}/>
         </div>
         <span className='name'>{name}</span>
         <span className='quantity'>

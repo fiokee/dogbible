@@ -8,15 +8,22 @@ const Shop =()=>{
  const {categoriesMap} = useContext(CategoriesContext);
 
     return(
-      <div className="products_container">
+      <Fragment>
+        {
+          Object.keys(categoriesMap).map((title) =>(
+          <Fragment key={title} >
+          <h2 className="title">{title}</h2>
+          <div className="products_container">
         
-        {/* {
-          categoriesMap.map((product)=>(
+        {categoriesMap[title].map((product)=>(
               <ProductCard key={product.id} product={product}/>
-          ))
-        } */}
+        ))}
       </div>
-    )
-  }
+          </Fragment>
+          ))}
+      </Fragment>
+      
+    );
+  };
 
   export default Shop;

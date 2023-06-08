@@ -1,4 +1,7 @@
 
+.container-box{
+  border: saddlebrown solid;
+}
 .product-card-container {
   width: 22vw;
   display: flex;
@@ -6,6 +9,7 @@
   height: 350px;
   align-items: center;
   position: relative;
+  border:  solid black;
  
   img {
     width: 100%;

@@ -11,7 +11,7 @@ const ProductCard = ({product}) => {
   
   return (
     <Fragment>
-    
+    <div className='container-box'>
     <div className='product-card-container'>
       <img src={photo} alt={`${name}`}/>
       <div className='footer'>
@@ -19,6 +19,7 @@ const ProductCard = ({product}) => {
         <span className='price'>${Price}</span>
       </div>
       <button onClick={addProducttoCart}>ADD TO CART</button>
+    </div>
     </div>
     </Fragment>
   )

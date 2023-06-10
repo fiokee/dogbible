@@ -32,4 +32,9 @@
       font-size: 36px;
     }
   }
+  @media screen and (max-width:700px) {
+    .header-block{
+      display: none;
+    }
+  }
   

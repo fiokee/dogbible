@@ -28,11 +28,11 @@
       .arrow {
         cursor: pointer;
         font-size: 19px;
-        background-color: #EE7D15;
+        background-color: #d4d2d0;
         width: 43px;
         text-align: center;
         border-radius: 18px;
-        color: white;
+      
       }
   
       .value {
@@ -46,6 +46,31 @@
       cursor: pointer;
       font-size: 30px;
       color: #EE7D15;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .checkout-item-container{
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .checkout-item-container .image-container{
+      width: 35vw;
+    }
+
+    .image-container img{
+      width: 80vw;
+      object-fit: cover;
+    }
+    .price{
+      align-items: center;
+      text-align: center;
+    }
+    .remove-button{
+      margin-top: 23px;
     }
   }
   

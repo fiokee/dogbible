@@ -1,11 +1,9 @@
 .category-preview-container {
-    display: flex;
+    display: block;
     flex-direction: column;
     margin-bottom: 30px;
     align-items: center;
-    border:  solid green;
-   
-  
+    
     .title {
       font-size: 28px;
       margin-bottom: 25px;
@@ -26,8 +24,14 @@
   @media screen and (max-width: 800px) {
     .category-preview-container{
       align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 15px;
+      gap: 15px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      
     }
   }

@@ -57,6 +57,8 @@ const OurBreed = () => {
         <h3>Marie Hademan Pahrum, Nv89049</h3>
         </div>
     </div>
+
+    
     <div className='container m-auto flex gap-6 justify-center'>
       <div className='bg-[#ff7f50ea] w-96 rounded-2xl cursor-pointer'>
       <span className='text-4xl font-extrabold'><GrNotes className='m-auto mt-10'/></span>

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ProductCard from '../product-card/ProductCard';
 import './product-preview.style.scss';
 
 const Product_Preview = ({title, products}) => {
   return (
+    <Fragment>
     <div className='category-preview-container'>
         <h2>
-            <span className='title'>{title}l</span>
+            <span className='title'>{title}</span>
         </h2>
         <div className='preview'>
 
@@ -18,6 +19,8 @@ const Product_Preview = ({title, products}) => {
              ))}
         </div>
     </div>
+
+    </Fragment>
   )
 }
 

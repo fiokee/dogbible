@@ -1,5 +1,5 @@
 import React, { useContext, Fragment} from "react";
-
+import './cate.scss';
 import Product_Preview from "../../components/product-preview/Product_Preview";
 import {CategoriesContext} from '../../components/contexts/categoriesContext';
 
@@ -9,6 +9,7 @@ const Categories_Preview =()=>{
 
     return(
       <Fragment>
+        <div className="contain">
         {
           Object.keys(categoriesMap).map((title) =>{
           const products = categoriesMap[title];
@@ -17,6 +18,7 @@ const Categories_Preview =()=>{
             <Product_Preview key={title} products={products}/>
           )
         })}
+        </div>
       </Fragment>
       
     );

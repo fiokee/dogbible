@@ -18,7 +18,7 @@ const ProductCard = ({product}) => {
         <span className='name'>{name}</span>
         <span className='price'>${Price}</span>
       </div>
-      <button onClick={addProducttoCart}>ADD TO CART</button>
+      <button onClick={addProducttoCart}>Add To Cart</button>
     </div>
     </div>
     </Fragment>
